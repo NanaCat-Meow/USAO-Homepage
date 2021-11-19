@@ -1,0 +1,508 @@
+@charset "UTF-8";
+/* font-family: 'Josefin Sans', sans-serif;
+font-family: 'Kosugi', sans-serif;
+font-family: 'Rock Salt', cursive; */
+/* アニメーション定義 */
+@keyframes VideoFadeOut {
+    0%{
+    }
+    100%{
+    opacity: 0;
+    visibility: hidden;
+    }
+}
+
+@keyframes fadeup {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeleft {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes faderight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*初期設定リセット*/
+*{
+    padding: 0;
+    margin: 0;;
+}
+
+/*メインCSS*/
+/*index.html*/
+#Welcome{
+    position: fixed;
+    background-color: #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    animation-name: VideoFadeOut;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 6s;
+    align-items: center;
+}
+
+.wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+
+header{
+    z-index: 5;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    border-bottom: solid 1px #777777;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header nav{
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../img/USAO.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+header nav ul{
+    width: 320px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #ffffff;
+
+}
+header nav ul li a:hover{
+    text-decoration: underline #ff0000;
+}
+
+footer p{
+    font-size: 14px;
+    margin: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*全ページ共通Bodyプロパティ*/
+body{
+    padding-top: 100px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body #name{
+    font-size: 36px;
+    position: relative;
+    text-align: right;
+    top: -100px;
+    right: 50px;
+    z-index: 1;
+    opacity: 0;
+    font-family: 'Rock Salt', cursive;
+    text-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+    animation: fadeleft 1s ease forwards;
+    animation-delay: 8s;
+}
+
+body h2:nth-of-type(2){
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+}
+
+body h2:nth-of-type(3){
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+}
+
+.spacer{
+    margin-top: 75px;
+    margin-bottom: 50px;
+}
+
+.spacer2{
+    margin-top: 20px;
+}
+
+.new-music {
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+    overflow: hidden; /*親要素*/
+}
+.new-music iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.new-music img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+    transition: 1s;
+}
+.new-music img:hover{
+    transform: scale(1.05);
+}
+
+.buy{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buy a{
+    font-family: 'Rock Salt', cursive;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.buy a:hover{
+    color:#ff0000
+}
+
+/*about.html*/
+#About tr td:nth-of-type(1){
+    opacity: 0;
+    animation: faderight 1s ease forwards;
+}
+
+#About tr td:nth-of-type(2){
+    font-size: 36px;
+    height: 36px;
+    padding-left: 20px;
+    font-family: 'Rock Salt', cursive;
+    color:#ffffff;
+    text-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+    animation: fadeleft 1s ease forwards;
+}
+
+#About tr:nth-of-type(2) td:nth-of-type(1){
+    font-size: 18px;
+    padding-left: 20px;
+    line-height: 24px;
+    opacity: 0;
+    vertical-align: top;
+    font-family: 'Kosugi', sans-serif;
+    color:#ffffff;
+    text-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+    animation: fadeleft 1s ease forwards;
+    background-image: url(../img/Twitter_ICON.png);
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: right bottom;
+}
+
+/*music.html*/
+body h2{
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+    text-align: center;
+    font-size: 36px;
+    margin: 0 auto;
+}
+body h2 span{
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 1px 1px 10px #222,-1px 1px 10px #222,1px -1px 10px #222,-1px -1px 10px #222;
+    font-size: 20px;
+}
+
+#Musiclist tr{
+    animation: fadeup 1.5s ease forwards;
+    opacity: 0;
+}
+
+#Musiclist tr:nth-of-type(1){
+    animation-delay: 0.5s;
+}
+#Musiclist tr:nth-of-type(2){
+    animation-delay: 0.75s;
+}
+#Musiclist tr:nth-of-type(3){
+    animation-delay: 1s;
+}
+#Musiclist tr:nth-of-type(4){
+    animation-delay: 1.25s;
+}
+#Musiclist tr:nth-of-type(5){
+    animation-delay: 1.5s;
+}
+#Musiclist tr:nth-of-type(6){
+    animation-delay: 1.75s;
+}
+#Musiclist tr:nth-of-type(7){
+    animation-delay: 2s;
+}
+#Musiclist tr:nth-of-type(8){
+    animation-delay: 2.25s;
+}
+#Musiclist tr:nth-of-type(9){
+    animation-delay: 2.5s;
+}
+#Musiclist tr:nth-of-type(10){
+    animation-delay: 2.75s;
+}
+#Musiclist tr:nth-of-type(11){
+    animation-delay: 3s;
+}
+#Musiclist tr:nth-of-type(12){
+    animation-delay: 3.25s;
+}
+#Musiclist tr:nth-of-type(13){
+    animation-delay: 3.5s;
+}
+#Musiclist tr:nth-of-type(14){
+    animation-delay: 3.75s;
+}
+
+#Musiclist tr td{
+    width:320px;
+}
+
+.title{
+    height: 50px;
+    vertical-align: bottom;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
+
+#XTREME_TEXT{
+    font-family: 'Josefin Sans', sans-serif;
+    text-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+    text-align: center;
+    font-size: 36px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeup 1.5s ease forwards;
+    animation-delay: 4s;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+#XTREME{
+    opacity: 0;
+    animation: fadeup 1.5s ease forwards;
+    animation-delay: 5s;
+}
+
+/*Album.html*/
+
+.AlbumArt tr td{
+    overflow: hidden;
+}
+.AlbumArt tr td img{
+    width: 320px;
+    height: 320px;
+    transition: 0.25s;
+}
+.AlbumArt tr td img:hover{
+    transform: scale(1.1);
+}
+
+/*ローディング*/
+.loadpos{
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+.breeding-rhombus-spinner {
+    height: 65px;
+    width: 65px;
+    position: absolute;
+    transform: rotate(45deg) translate(-50%, -50%);
+    left: 48%;
+    top: 50%
+}
+
+  .breeding-rhombus-spinner, .breeding-rhombus-spinner * {
+    box-sizing: border-box;
+}
+
+.breeding-rhombus-spinner .rhombus {
+    height: calc(65px / 7.5);
+    width: calc(65px / 7.5);
+    animation-duration: 2000ms;
+    top: calc(65px / 2.3077);
+    left: calc(65px / 2.3077);
+    background-color: #ffffff;
+    box-shadow: 2px 2px 10px #444,-2px 2px 10px #444,2px -2px 10px #444,-2px -2px 10px #444;
+    position: absolute;
+    animation-iteration-count: infinite;
+}
+
+.breeding-rhombus-spinner .rhombus:nth-child(2n+0) {
+    margin-right: 0;
+}
+
+.breeding-rhombus-spinner .rhombus.child-1 {
+    animation-name: breeding-rhombus-spinner-animation-child-1;
+    animation-delay: calc(100ms * 1);
+}
+
+.breeding-rhombus-spinner .rhombus.child-2 {
+    animation-name: breeding-rhombus-spinner-animation-child-2;
+    animation-delay: calc(100ms * 2);
+}
+
+.breeding-rhombus-spinner .rhombus.child-3 {
+    animation-name: breeding-rhombus-spinner-animation-child-3;
+    animation-delay: calc(100ms * 3);
+}
+
+.breeding-rhombus-spinner .rhombus.child-4 {
+    animation-name: breeding-rhombus-spinner-animation-child-4;
+    animation-delay: calc(100ms * 4);
+}
+
+.breeding-rhombus-spinner .rhombus.child-5 {
+    animation-name: breeding-rhombus-spinner-animation-child-5;
+    animation-delay: calc(100ms * 5);
+}
+
+.breeding-rhombus-spinner .rhombus.child-6 {
+    animation-name: breeding-rhombus-spinner-animation-child-6;
+    animation-delay: calc(100ms * 6);
+}
+
+.breeding-rhombus-spinner .rhombus.child-7 {
+    animation-name: breeding-rhombus-spinner-animation-child-7;
+    animation-delay: calc(100ms * 7);
+}
+
+.breeding-rhombus-spinner .rhombus.child-8 {
+    animation-name: breeding-rhombus-spinner-animation-child-8;
+    animation-delay: calc(100ms * 8);
+}
+
+.breeding-rhombus-spinner .rhombus.big {
+    height: calc(65px / 3);
+    width: calc(65px / 3);
+    animation-duration: 2000ms;
+    top: calc(65px / 3);
+    left: calc(65px / 3);
+    background-color: #ffffff;
+    animation: breeding-rhombus-spinner-animation-child-big 2s infinite;
+    animation-delay: 0.5s;
+}
+
+
+@keyframes breeding-rhombus-spinner-animation-child-1 {
+    50% {
+    transform: translate(-325%, -325%);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-2 {
+    50% {
+    transform: translate(0, -325%);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-3 {
+    50% {
+    transform: translate(325%, -325%);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-4 {
+    50% {
+    transform: translate(325%, 0);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-5 {
+    50% {
+    transform: translate(325%, 325%);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-6 {
+    50% {
+    transform: translate(0, 325%);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-7 {
+    50% {
+    transform: translate(-325%, 325%);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-8 {
+    50% {
+    transform: translate(-325%, 0);
+    }
+}
+
+@keyframes breeding-rhombus-spinner-animation-child-big {
+    50% {
+    transform: scale(0.5);
+    }
+}
